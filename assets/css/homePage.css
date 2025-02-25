@@ -96,11 +96,14 @@ body::before{
     cursor: pointer;
     z-index: 2;
     background-color: var(--primary-color);
+    transition: transform 0.3s ease-in-out; /*
+        O valor 'ease-in-out' faz com que a transição comece e termine de forma lenta, 
+        mas seja mais rápida no meio, proporcionando um efeito mais natural e agradável.
+    */
 }
 
 .controller__button:hover{
-    width: 3rem;
-    height: 3rem;
+    transform: scale(1.2);
 }
 
 .controller__button:nth-child(2){
