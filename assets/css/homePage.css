@@ -11,6 +11,7 @@ body::before{
     height: 100%;
     position: absolute;
     opacity: .2;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 }
 
 .menu{
@@ -64,6 +65,7 @@ body::before{
     height: 100%;
     object-fit: contain;
     position: relative; /* Define a posição do elemento como relativa ao seu elemento pai */
+    transition: transform 0.8s ease-in-out;
 }
 .card__tittle{
     width: 100%;
@@ -97,8 +99,8 @@ body::before{
     z-index: 2;
     background-color: var(--primary-color);
     transition: transform 0.3s ease-in-out; /*
-        O valor 'ease-in-out' faz com que a transição comece e termine de forma lenta, 
-        mas seja mais rápida no meio, proporcionando um efeito mais natural e agradável.
+    O valor 'ease-in-out' faz com que a transição comece e termine de forma lenta, 
+    mas seja mais rápida no meio, proporcionando um efeito mais natural e agradável.
     */
 }
 
@@ -116,4 +118,32 @@ body::before{
     height: 3px;
     position: absolute;
     z-index: 1;
+}
+
+/* Hover animation */
+
+.card--hovered .card__background{
+    opacity: 0;
+}
+
+.card--hovered .card__spiderMan{
+    transition: transform 1s ease-in-out;
+    transform: scale(1.4);
+    filter: drop-shadow(30px 10px 4px rgba(0, 0, 0, 0.5));
+}
+
+body#spiderMan__01--hovered::before{
+    background-image: url('/assets/images/pic-sm-bg-01.jpg');
+}
+
+body#spiderMan__02--hovered::before{
+    background-image: url('/assets/images/pic-sm-bg-02.jpg');
+}
+
+body#spiderMan__03--hovered::before{
+    background-image: url('/assets/images/pic-sm-bg-03.jpg');
+}
+
+body[id^='spiderMan__']::before{
+    opacity: 1;
 }
