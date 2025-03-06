@@ -50,6 +50,7 @@ body::before{
         mantendo suas dimensões e limites intactos. Sem essa propriedade, o background pode se comportar de maneira inesperada, 
         ultrapassando as bordas do elemento.
     */
+    transition: filter .5s ease-in-out; 
 }
 
 .card__background{
@@ -60,12 +61,13 @@ body::before{
     opacity: 1;
 }
 
-.card__spiderMan{
+.card__image{
     width: 100%;
     height: 100%;
     object-fit: contain;
     position: relative; /* Define a posição do elemento como relativa ao seu elemento pai */
     transition: transform 0.8s ease-in-out;
+    z-index: 1;
 }
 .card__tittle{
     width: 100%;
@@ -74,6 +76,8 @@ body::before{
     text-transform: uppercase;
     text-align: center;
     font-size: 2rem;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 0;
 }
 
 .controller{
@@ -120,13 +124,13 @@ body::before{
     z-index: 1;
 }
 
-/* Hover animation */
+/* Hover animation ------------------------------------------- */
 
 .card--hovered .card__background{
     opacity: 0;
 }
 
-.card--hovered .card__spiderMan{
+.card--hovered .card__image{
     transition: transform 1s ease-in-out;
     transform: scale(1.4);
     filter: drop-shadow(30px 10px 4px rgba(0, 0, 0, 0.5));
@@ -146,4 +150,8 @@ body#spiderMan__03--hovered::before{
 
 body[id^='spiderMan__']::before{
     opacity: 1;
+}
+
+body[id^='spiderMan__'] .card:not(.card--hovered){
+    filter: grayscale(100%);
 }
