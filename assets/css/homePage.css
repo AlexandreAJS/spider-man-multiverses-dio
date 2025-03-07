@@ -14,6 +14,10 @@ body::before{
     transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 }
 
+body{
+    background-color: var(--primary-color);
+}
+
 .menu{
     display: flex;
     padding: 1rem 0;
@@ -50,7 +54,7 @@ body::before{
         mantendo suas dimensões e limites intactos. Sem essa propriedade, o background pode se comportar de maneira inesperada, 
         ultrapassando as bordas do elemento.
     */
-    transition: filter .5s ease-in-out; 
+    transition: filter .5s ease-in-out;
 }
 
 .card__background{

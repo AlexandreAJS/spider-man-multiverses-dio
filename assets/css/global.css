@@ -3,7 +3,3 @@
 :root {
     --primary-color: #89001F;
 }
-
-body {
-    background-color: var(--primary-color);
-}
