@@ -50,7 +50,7 @@
 .navigator ul li a.active {
     background-color: #fff;
     color: var(--primary-color);
-    transform: scale(1.2);
+    transform: scale(1.4);
 }
 
 .navigator .navigator-icon{
@@ -61,5 +61,5 @@
 }
 
 .navigator .navigator-icon:hover{
-    transform: scale(1.2);
+    transform: scale(1.4);
 }
